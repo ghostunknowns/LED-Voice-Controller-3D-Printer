@@ -1,0 +1,43 @@
+# P1S direct-MQTT LED controller
+
+Firmware for an ESP32-C3 that drives an 81-pixel addressable LED strip from
+read-only Bambu P1S local MQTT telemetry.
+
+## Build and flash
+
+1. Install [PlatformIO](https://platformio.org/) in VS Code.
+2. Open this directory and select the `esp32-c3-devkitm-1` environment. Change
+   `board` in `platformio.ini` if your custom board needs another ESP32-C3
+   definition.
+3. Build, upload, then open the serial monitor at 115200 baud.
+4. On first start (or if Wi-Fi cannot be joined), the controller opens a setup
+   Wi-Fi network named `P1S-LED-Setup-XXXX`. Its password is printed only on
+   the serial monitor. Browse to `http://192.168.4.1` and save your settings.
+
+The dashboard intentionally never returns the LAN access code or Wi-Fi
+password. It has no authentication, so use it only on a trusted local network.
+Use a DHCP reservation for the printer so its IP address remains stable.
+
+## P1S configuration
+
+Enable the local/LAN/developer mode supported by the installed P1S firmware,
+then copy the printer's IP address, serial number, and LAN access code into the
+setup page. This program connects only to:
+
+`device/<serial>/report`
+
+It never publishes to the printer request topic and cannot control the printer.
+
+P1S local MQTT uses TLS on port 8883. Export the printer broker's PEM CA/server
+certificate and paste it into the dashboard. TLS is deliberately not bypassed:
+the controller refuses to connect until a PEM certificate is supplied.
+
+## Hardware
+
+- LED data: GPIO4, 81 pixels (set `LED_COUNT` in `src/main.cpp` if needed)
+- I2S microphone (diagnostic amplitude only): WS GPIO6, SCK GPIO5, SD GPIO7
+
+The strip must share ground with the ESP32 and have sufficient 5 V current.
+The 5 V USB port must be able to supply the strip's worst-case draw; brightness
+defaults to a conservative 96/255. A 3.3 V-to-5 V level shifter is recommended
+for a 5 V LED data input.
