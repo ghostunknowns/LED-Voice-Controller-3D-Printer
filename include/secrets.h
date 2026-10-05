@@ -1,11 +1,11 @@
 #pragma once
 
 // Local device configuration. Ignored by Git: do not share this file.
-#define DEFAULT_WIFI_SSID "Arden Villas"
-#define DEFAULT_WIFI_PASSWORD "Baggy-Taupe~Crab"
-#define DEFAULT_P1S_SERIAL "01S00C3C3000512"
+#define DEFAULT_WIFI_SSID "----"               // the name of your wifi
+#define DEFAULT_WIFI_PASSWORD "----"           // the wifi password
+#define DEFAULT_P1S_SERIAL "----"              // your specific P1S serial number
 
 // Bambu Cloud MQTT (Americas). The token expires periodically and must then
 // be replaced with a new one from the Bambu account.
-#define DEFAULT_BAMBU_CLOUD_USER "2431029311"
-#define DEFAULT_BAMBU_CLOUD_TOKEN "AQDrys1mldAKtO0eyTL01J0tymMCF5Qj8Sw0XV_ulIr6gaIr7IPA0xFcPppcYHsx3AgNgISkVNFo9x3U5NLsBKRBwY2YDMViQZIDn__4lufBzAi2IvKW86fSV9jXkuXQzEwpd-dZWUs4rFzb"
+#define DEFAULT_BAMBU_CLOUD_USER "----"        // bambu cloud user id
+#define DEFAULT_BAMBU_CLOUD_TOKEN "----"       // bambu cloud token
