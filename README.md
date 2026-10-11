@@ -28,15 +28,44 @@ Successfully design a custom PCB small enough to fit inside the slot on the 3D p
 6. **Convert voice commands into actionable data the PCB can read and decipher.** *(Not Started)*
 
 ## Required Hardware
-provide the pcb design images, maybe files
+
+To build this project, you will need the custom PCB based on the designs shown below, along with the following components:
+
+* **3D Printer:** A Bambu Lab P1S. (It may work with other Bambu Lab printers, but this has only been tested on the P1S).
+* **LED Strip:** A 5V LED strip. (For reference, I used 81 LEDs cut from a 60 LEDs/meter strip).
+* **Printed Enclosures:** You will need to print the custom housing pieces to mount the LED strip inside the printer.
+
+**Note on PCB Files:** I am intentionally not sharing the raw PCB project files. Since I've provided the schematics and layout below, I encourage you to design your own board! It's a great hands-on learning experience, and it gives you the chance to put your own twist on the project! 
+
+* **Component Sourcing:** DigiKey
+* **PCB Fabrication:** JLCPCB
+
+### Useful Links
+
+* [LED Strip](https://www.amazon.com/dp/B0BNN1ZQHS?th=1)
+* [3D Printed Parts](https://makerworld.com/en/models/99746-low-profile-p1s-x1c-p1p-riser-with-diffused-led?from=search#profileId-106353)
+
+### Schematic
 
 <img src="readme-assets/schematic-editor.png" width="50%">
+
+### Layout
+
 <img src="readme-assets/pcb-editor.png" width="50%">
 
-### Powering 
-how does the pcb get power from the printer
+### PCB in External USB Port 
 
 <img src="readme-assets/pcb_in_printer.jpeg" width="50%">
+
+### For Those Worried About Soldering
+
+Don't worry, there are surface mounted components, so no hand soldering is required for this project. All you need is solder paste and a hotplate. 
+
+When applying the solder paste, you have a few options:
+* **Stencil:** You can order a stencil along with your PCB from the fabricator to make applying paste quick and precise.
+* **Syringe / Manual:** You can use the syringe that usually comes with the solder paste to manually apply a small amount to each pad. 
+
+*(For reference, I used a syringe directly, so a stencil isn't strictly necessary—though it can definitely save you some time!)*
 
 ## Features
 list the capabilites
