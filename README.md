@@ -68,13 +68,33 @@ When applying the solder paste, you have a few options:
 *(For reference, I used a syringe directly, so a stencil isn't strictly necessary—though it can definitely save you some time!)*
 
 ## Features
-list the capabilites
 
-### Startup&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Loading Filament&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Unloading Filament
-<img src="readme-assets/startup.webp" width="25%">  &emsp;&emsp;&emsp;&emsp; <img src="readme-assets/loading_filament.webp" width="25%">  &emsp;&emsp;&emsp;&emsp; <img src="readme-assets/unloading_filament.webp" width="25%">
+The custom PCB communicates with the Bambu Cloud MQTT broker, allowing the LED strip to dynamically reflect the printer's operational state through custom animations, alongside a built-in local web dashboard to test animations.
 
-### Printing&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Standby&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Print Finished
-<img src="readme-assets/printing.jpeg" width="33%">  &emsp;&emsp;&emsp;&emsp; <img src="readme-assets/standby.webp" width="25%">  &emsp;&emsp;&emsp;&emsp; <img src="readme-assets/print_finish.webp" width="25%">
+### Operational Modes
+
+| Startup | Standby | Printing |
+| :---: | :---: | :---: |
+| <img src="readme-assets/startup.webp" width="1000"> | <img src="readme-assets/standby.webp" width="300"> | <img src="readme-assets/printing.jpeg" width="1200"> |
+| Runs a dual green chase animation on startup while establishing WiFi and MQTT connections before transitioning into standby. | Features smooth background color shifting with randomized pixel *glitch* flickers. Includes an automatic 15-minute standby timeout. | Turns the LEDs to white, making it bright enough to see what you're printing.
+
+| Filament Loading  | Filament Unloading | Finished |
+| :---: | :---: | :---: |
+| <img src="readme-assets/loading_filament.webp" width="300"> | <img src="readme-assets/unloading_filament.webp" width="1000"> | <img src="readme-assets/print_finish.webp" width="300"> |
+| Displays dual tracking *comet* animations moving in clockwise rotation. Simulating filament going into the extruder. | Displays dual tracking *comet* animations moving in counterclockwise rotation. Simulating filament going out of the extruder. | Runs a breathing green pulsing animation for 5 minutes and automatically turns off the printer's stock chamber light bar. |
+
+### Web Dashboard & Control Portal
+
+By connecting to the local device IP on your network, you can access a dashboard:
+* **Live Status:** View real-time nozzle/bed temperatures, print progress percentage, current stage, WiFi status, and MQTT connection health.
+* **Mode Previews:** Instantly test and preview any LED animation mode right from your browser without needing to trigger the printer.
+
+### Coming Soon:
+
+The next phase of development leverages the onboard I2S MEMS microphone and ESP32 processing power for expanded capabilities:
+* **Voice Command Decoding:** Local or cloud processing to interpret spoken commands (loading filament, pausing, resuming, or stopping).
+* **Over the Air Settings:** Easily configure your WiFi credentials, Bambu Cloud user ID, access token, printer serial number, LED brightness, and finish timer duration. *(maybe)*
+
 
 
 ## Installation
