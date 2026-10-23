@@ -1,21 +1,6 @@
 # Bambu P1S LED & Voice Controller
 
-Image of pcb here
-
-## Introduction
-Overview of project function
-Objectives and Goals, mention that this is still in progress
-
-## Required Hardware
-provide the pcb design images, maybe files
-### Powering 
-how does the pcb get power from the printer
-
-## Features
-list the capabilites
-=======
-<img src="/readme-assets/pcb.jpeg" width="30%">
-
+<img src="/readme-assets/main_image.jpeg" width="30%">  <img src="/readme-assets/pcb.jpeg" width="50%">
 
 
 ## Introduction
@@ -109,8 +94,7 @@ The next phase of development leverages the onboard I2S MEMS microphone and ESP3
 
 
 
-
 ## Installation
-briefly explain how the code aspect works
-
-explain what's needed to run the code
+<!-- briefly explain how the code aspect works 
+explain what's needed to run the code -->
+Coming Soon
